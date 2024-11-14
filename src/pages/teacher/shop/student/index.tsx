@@ -29,7 +29,7 @@ function student() {
 			<div css={subTitleCSS}>학생이 등록한 상품을 조회하고 등록, 수정 삭제할 수 있습니다.</div>
 			{cardData?.length === 0 ? (
 				<div css={noneWrapperCSS}>
-					<UseAnimations animation={alertCircle} size={300} strokeColor={"rgba(0,0,0,0.4)"} />
+					{/* <UseAnimations animation={alertCircle} size={300} strokeColor={"rgba(0,0,0,0.4)"} /> */}
 					<h1>등록된 상품이 없습니다.</h1>
 				</div>
 			) : (

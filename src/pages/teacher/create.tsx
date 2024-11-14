@@ -374,7 +374,7 @@ function create() {
 					</div>
 				</div>
 				<div css={phaseWrapperCSS}>
-					<UseAnimations animation={alertCircle} size={256} />
+					{/* <UseAnimations animation={alertCircle} size={256} /> */}
 					<div css={successLabelCSS}>학급 경제가 성공적으로 생성되었습니다!</div>
 					<div css={successSubLabelCSS}>잠시 후, 학급 관리 페이지로 리다이렉트됩니다!</div>
 				</div>

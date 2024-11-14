@@ -32,7 +32,7 @@ function NotiTemplate({type, content, buttons}: {type: string; content: string; 
                     width: 100%;
                 `}
             >
-                <UseAnimations animation={alertTriangle} size={82} />
+                {/* <UseAnimations animation={alertTriangle} size={82} /> */}
                 <div css={css`flex: 1; margin-right: 16px; display: flex; flex-direction: column;`}>
                     {content}
                     {buttons && renderButtons}
@@ -49,7 +49,7 @@ function NotiTemplate({type, content, buttons}: {type: string; content: string; 
                     margin-left: 16px;
                 `}
             >
-                <UseAnimations animation={radioButton} reverse={true} size={48} css={css`margin: 0px 16px 0px 0px;`} />
+                {/* <UseAnimations animation={radioButton} reverse={true} size={48} css={css`margin: 0px 16px 0px 0px;`} /> */}
                 <div css={css`flex: 1; margin-right: 16px; display: flex; flex-direction: column;`}>
                     {content}
                     {buttons && renderButtons}

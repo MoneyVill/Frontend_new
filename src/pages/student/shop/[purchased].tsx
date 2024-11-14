@@ -29,14 +29,14 @@ function purchased() {
 			<PageHeader title={"결제 완료"} />
 			<div css={wrapperCSS}>
 				<div css={topContentWrapperCSS}>
-					<UseAnimations
+					{/* <UseAnimations
 						animation={radioButton}
 						reverse={true}
 						size={128}
 						css={css`
 							margin: 0px 0px 24px 0px;
 						`}
-					/>
+					/> */}
 					결제가 완료되었습니다!
 				</div>
 				<div css={buttonWrapperCSS}>
