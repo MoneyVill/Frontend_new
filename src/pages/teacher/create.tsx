@@ -79,7 +79,7 @@ function create() {
 		if (phase === 2) {
 			setTimeout(() => {
 				setTokenStatus({showMessage: false})
-				// router.push("/teacher/class/students")
+				router.push("/teacher/class/students")
 			}, 2000)
 		}
 	}, [phase])
