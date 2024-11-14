@@ -1,0 +1,64 @@
+{\rtf1\ansi\ansicpg949\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red255\green255\blue255;}
+{\*\expandedcolortbl;;\cssrgb\c100000\c100000\c100000;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs26 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 # Created by https://www.toptal.com/developers/gitignore/api/nextjs,react\
+# Edit at https://www.toptal.com/developers/gitignore?templates=nextjs,react\
+\
+### NextJS ###\
+# dependencies\
+/node_modules\
+/.pnp\
+.pnp.js\
+\
+# testing\
+/coverage\
+\
+# next.js\
+/.next/\
+/out/\
+\
+# production\
+/build\
+\
+# misc\
+.DS_Store\
+*.pem\
+\
+# debug\
+npm-debug.log*\
+yarn-debug.log*\
+yarn-error.log*\
+.pnpm-debug.log*\
+\
+# local env files\
+.env*.local\
+\
+# vercel\
+.vercel\
+\
+# typescript\
+*.tsbuildinfo\
+next-env.d.ts\
+\
+### react ###\
+.DS_*\
+*.log\
+logs\
+**/*.backup.*\
+**/*.back.*\
+\
+node_modules\
+bower_components\
+\
+*.sublime*\
+\
+psd\
+thumb\
+sketch\
+}
