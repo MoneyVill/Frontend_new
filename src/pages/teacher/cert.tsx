@@ -94,7 +94,7 @@ function cert() {
 		<div css={wrapperCSS}>
 			{getTokenStatus.status === "require_approval" && (
 				<div css={contentWrapperCSS}>
-					<UseAnimations animation={alertCircle} size={256} />
+					{/* <UseAnimations animation={alertCircle} size={256} /> */}
 					<div css={successLabelCSS}>교사 인증서 승인 대기중입니다.</div>
 					<div css={successSubLabelCSS}>인증 완료 시, 문자가 발송됩니다!</div>
 					{!rePost && (
@@ -117,7 +117,7 @@ function cert() {
 
 			{getTokenStatus.status === "require_submit_certification" && (
 				<div css={contentWrapperCSS}>
-					<UseAnimations animation={alertTriangle} size={256} />
+					{/* <UseAnimations animation={alertTriangle} size={256} /> */}
 					<div css={successLabelCSS}>교사 인증서 승인이 거절되었습니다.</div>
 					<div css={successSubLabelCSS}>서비스를 이용하기 위해서는 유효한 인증서를 제출해야 합니다.</div>
 				</div>

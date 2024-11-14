@@ -51,7 +51,7 @@ function index() {
 			{/* 화면 넓을때 상품 없음 알림 중앙 정렬 안되서 빼놨음 */}
 			{cardData?.length === 0 && (
 				<div css={noneWrapperCSS}>
-					<UseAnimations animation={alertCircle} size={200} strokeColor={"rgba(0,0,0,0.4)"} />
+					{/* <UseAnimations animation={alertCircle} size={200} strokeColor={"rgba(0,0,0,0.4)"} /> */}
 					<h3>등록된 상품이 없어요</h3>
 				</div>
 			)}
