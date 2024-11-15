@@ -2,7 +2,12 @@ import { formDataInstance } from "@/api/instance"
 import { successReturnType, errorReturnType } from "@/types/common/apiReturnTypes"
 
 type paramsType = {
-	body: FormData
+	body: {
+		name: string
+		identity: string
+		password: string
+		checkedPassword: string
+	}
 }
 
 type responseType = {

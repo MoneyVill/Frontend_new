@@ -5,8 +5,8 @@ import Button from "@/components/common/Button/Button"
 import { getFinanceDepositRateType } from "@/types/student/apiReturnTypes"
 import { postFinanceDepositAPI } from "@/api/student/finance/postFinanceDepositAPI"
 import useNotification from "@/hooks/useNotification"
-// import UseAnimations from "react-useanimations"
-// import alertTriangle from "react-useanimations/lib/alertTriangle"
+import UseAnimations from "react-useanimations"
+import alertTriangle from "react-useanimations/lib/alertTriangle"
 import NotiTemplate from "@/components/common/StackNotification/NotiTemplate"
 
 const ALERT_ICON = (

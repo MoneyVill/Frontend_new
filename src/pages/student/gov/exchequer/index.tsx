@@ -7,8 +7,8 @@ import { GovTabMenus } from "@/components/student/Gov/GovTabMenus"
 import { getGovExchequerAPI } from "@/api/teacher/gov/getGovExchequerAPI"
 import { useEffect, useState } from "react"
 import { getGovExchequerType } from "@/types/teacher/apiReturnTypes"
-// import UseAnimations from "react-useanimations"
-// import alertCircle from "react-useanimations/lib/alertCircle"
+import UseAnimations from "react-useanimations"
+import alertCircle from "react-useanimations/lib/alertCircle"
 
 function index() {
 	const [exchequerList, setExchequerList] = useState<getGovExchequerType[]>([])

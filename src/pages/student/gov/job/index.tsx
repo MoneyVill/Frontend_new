@@ -6,8 +6,8 @@ import { GovTabMenus } from "@/components/student/Gov/GovTabMenus"
 import { getGovJobAPI } from "@/api/teacher/gov/getGovJobAPI"
 import { useQuery } from "@tanstack/react-query"
 import { getGovJobType } from "@/types/teacher/apiReturnTypes"
-// import UseAnimations from "react-useanimations"
-// import alertCircle from "react-useanimations/lib/alertCircle"
+import UseAnimations from "react-useanimations"
+import alertCircle from "react-useanimations/lib/alertCircle"
 
 function index() {
 	const { data } = useQuery<getGovJobType[]>(["govJobList"], getGovJobAPI)
