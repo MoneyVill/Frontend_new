@@ -13,7 +13,7 @@ type paramsType = {
 
 type responseType = {
 	status: number
-	data: successReturnType | errorReturnType
+	data: string
 }
 
 export const postCreateNationAPI = async ({ body }: paramsType) => {

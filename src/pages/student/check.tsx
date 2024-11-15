@@ -20,6 +20,7 @@ function enter() {
 		getTokenStatusAPI().then((res) => {
 			if (res.status == "require_refresh_token") {
 				postStudentTokenUpdateAPI().then((res) => {
+					setCookie("Authorization", res, { path: "/", maxAge: 30 * 24 * 60 * 60 })
 					setTokenStatus({ showMessage: false }).then((res) => {
 						console.log("여기에 할일")
 					})
