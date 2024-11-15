@@ -1,15 +1,12 @@
 import { useReducer, useEffect } from "react"
-// import { useReducer, useRef, useEffect } from "react"
 import { css } from "@emotion/react"
 import { postTeacherAPI } from "@/api/teacher/user/postTeacherAPI"
 import { KOREAN_ONLY, ENG_NUM_ONLY } from "@/util/regex"
-// import { KOREAN_ONLY, ENG_NUM_ONLY, PHONE_NUMBER_ONLY } from "@/util/regex"
 import { lengthCheck } from "@/util/lengthCheck"
 import LoadImage from "@/components/common/LoadImage/LoadImage"
 import Input from "@/components/common/Input/Input"
 import Button from "@/components/common/Button/Button"
 import { NAME_ICON, ID_ICON, PASSWORD_ICON, PASSWORD2_ICON } from "@/components/teacher/Signup/SignupIcons/SignupIcons"
-
 import { postDuplicationCheckAPI } from "@/api/common/postDuplicationCheckAPI"
 import { useRouter } from "next/router"
 
@@ -103,37 +100,30 @@ function Signup() {
 	}, [inputState.password2])
 
 	const checkValidNameHandler = (forSumbit = false) => {
-		// 입력값이 없을 때
 		if (inputState.name === "") {
-			// 제출버튼을 눌렀다면
 			if (forSumbit) {
 				dispatchValidMessage({ type: "VALID_NAME", value: "이름을 입력해 주세요." })
 			}
 			dispatchValid({ type: "VALID_NAME", value: false })
 			return
 		}
-		// 유효하지 않을 때
 		if (KOREAN_ONLY.test(inputState.name) === false) {
 			dispatchValidMessage({ type: "VALID_NAME", value: "이름은 한글만 입력 가능합니다." })
 			dispatchValid({ type: "VALID_NAME", value: false })
 			return
 		}
-		// 사용가능하다면
 		dispatchValidMessage({ type: "VALID_NAME", value: "" })
 		dispatchValid({ type: "VALID_NAME", value: true })
 	}
 
 	const checkValidIDHandler = (forSumbit = false, checkVerify = false) => {
-		// 입력값이 없을 때
 		if (inputState.id === "") {
-			// 제출버튼을 눌렀다면
 			if (forSumbit) {
 				dispatchValidMessage({ type: "VALID_ID", value: "아이디를 입력해 주세요." })
 			}
 			dispatchValid({ type: "VALID_ID", value: false })
 			return
 		}
-		// 유효하지 않을 때
 		if (ENG_NUM_ONLY.test(inputState.id) === false || lengthCheck(inputState.id, 4, 10) === false) {
 			dispatchValid({ type: "VALID_ID", value: false })
 			dispatchValidMessage({
@@ -142,7 +132,6 @@ function Signup() {
 			})
 			return
 		}
-		// 중복 확인을 하지 않았다면
 		if (forSumbit) {
 			if (!validState.id) {
 				dispatchValidMessage({ type: "VALID_ID", value: "아이디 중복 확인을 해주세요." })
@@ -150,21 +139,17 @@ function Signup() {
 				return
 			}
 		}
-
 		dispatchValidMessage({ type: "VALID_ID", value: "" })
 		dispatchValid({ type: "VALID_ID", value: false })
 
 		if (checkVerify) {
 			postDuplicationCheckAPI({ body: { identity: inputState.id } }).then((res) => {
 				if (res?.isDuplicated === false) {
-					// 사용 가능하면
 					dispatchValidMessage({ type: "VALID_ID", value: "사용 가능한 ID입니다." })
 					dispatchValid({ type: "VALID_ID", value: true })
 				} else {
-					// 불가능하면
 					dispatchValidMessage({ type: "VALID_ID", value: "이미 중복된 아이디, 혹은 사용 불가능한 아이디입니다." })
 					dispatchValid({ type: "VALID_ID", value: false })
-					return
 				}
 			})
 		}
@@ -181,7 +166,6 @@ function Signup() {
 			dispatchValid({ type: "VALID_PW2", value: false })
 			return
 		}
-
 		if (ENG_NUM_ONLY.test(inputState.password) === false || lengthCheck(inputState.password, 8, 16) === false) {
 			dispatchValid({ type: "VALID_PW2", value: false })
 			dispatchValidMessage({
@@ -190,34 +174,26 @@ function Signup() {
 			})
 			return
 		}
-
 		dispatchValidMessage({ type: "VALID_PW", value: "사용 가능한 비밀번호입니다." })
 		dispatchValid({ type: "VALID_PW", value: true })
 	}
 
 	const checkValidPW2Handler = () => {
-        // 비밀번호 입력이 없는 경우
         if (inputState.password === "") {
             dispatchValid({ type: "VALID_PW2", value: false })
             dispatchValidMessage({ type: "VALID_PW2", value: "비밀번호를 먼저 입력해 주세요." })
             return
         }
-    
-        // 비밀번호 확인 입력이 없는 경우
         if (inputState.password2 === "") {
             dispatchValid({ type: "VALID_PW2", value: false })
             dispatchValidMessage({ type: "VALID_PW2", value: "비밀번호 확인을 입력해 주세요." })
             return
         }
-    
-        // 비밀번호와 비밀번호 확인이 일치하지 않으면
         if (inputState.password2 !== inputState.password) {
             dispatchValid({ type: "VALID_PW2", value: false })
             dispatchValidMessage({ type: "VALID_PW2", value: "비밀번호가 일치하지 않습니다." })
             return
         }
-    
-        // 비밀번호와 비밀번호 확인이 일치하고, 유효성 검사 통과
         dispatchValidMessage({ type: "VALID_PW2", value: "비밀번호가 일치합니다." })
         dispatchValid({ type: "VALID_PW2", value: true })
     }
@@ -229,13 +205,15 @@ function Signup() {
 		checkValidPW2Handler()
 
 		if (validState.name && validState.id && validState.password && validState.password2) {
+			// FormData 객체 생성
+			const formData = new FormData()
+			formData.append("name", inputState.name)
+			formData.append("identity", inputState.id)
+			formData.append("password", inputState.password)
+			formData.append("checkedPassword", inputState.password)
+
 			postTeacherAPI({
-				body: {
-					name: inputState.name,
-					identity: inputState.id,
-					password: inputState.password,
-					checkedPassword: inputState.password,
-				},
+				body: formData,
 			})
 				.then(() => {
 					router.push("/teacher/login")
@@ -254,9 +232,6 @@ function Signup() {
 		<div css={wrapperCSS}>
 			<div css={innerWrapperCSS}>
 				<LoadImage src={"/assets/signup/illust.png"} alt={"signup_illust"} wrapperCss={imageWrapperCSS} dev={false} />
-
-				{/* placeholder 멘트도 더 좋은게 있다면 수정해주세요 */}
-
 				<div css={inputTitleCSS}>이름</div>
 				<Input
 					leftContent={NAME_ICON}
@@ -289,8 +264,6 @@ function Signup() {
 					type="text"
 					placeholder="영어, 숫자 4자~10자 입력해주세요"
 					onChange={(e) => {
-						// dispatchValid({ type: "VALID_ID", value: false })
-
 						dispatchInput({ type: "CHANGE_ID", value: e.target.value })
 					}}
 				/>
@@ -304,8 +277,6 @@ function Signup() {
 					type="password"
 					placeholder="영어와 숫자를 조합해 8자~16자 입력해주세요"
 					onChange={(e) => {
-						// dispatchValid({ type: "VALID_PW", value: false })
-
 						dispatchInput({ type: "CHANGE_PW", value: e.target.value })
 					}}
 				/>

@@ -1,5 +1,5 @@
 import React from 'react'
-// import UseAnimations from "react-useanimations"
+import UseAnimations from "react-useanimations"
 import loading from "react-useanimations/lib/loading"
 import { css } from "@emotion/react"
 import { isNavigating } from '@/store/store'

@@ -1,8 +1,8 @@
 import React from "react"
 import ModalContent from "./ModalContent"
 import { css } from "@emotion/react"
-// import UseAnimations from "react-useanimations"
-// import alertTriangle from "react-useanimations/lib/alertTriangle"
+import UseAnimations from "react-useanimations"
+import alertTriangle from "react-useanimations/lib/alertTriangle"
 import Button from "../Button/Button"
 
 type ModalAlertProps = {
