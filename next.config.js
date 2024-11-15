@@ -19,7 +19,7 @@ module.exports = withPWA({
     return [
       {
         source: "/api/:path*",
-        destination: "https://k8d103.p.ssafy.io/api/:path*",
+        destination: "http://43.201.250.128:8081/api/:path*",
       },
     ];
   },
@@ -36,7 +36,7 @@ module.exports = {
     return [
       {
         source: "/api/:path*",
-        destination: "https://k8d103.p.ssafy.io/api/:path*",
+        destination: "http://43.201.250.128:8081/api/:path*",
       },
     ];
   },
