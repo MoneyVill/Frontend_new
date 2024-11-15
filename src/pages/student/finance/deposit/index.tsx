@@ -53,7 +53,7 @@ function index() {
 									height: 128px;
 								`}
 							>
-								{isNavigatingAtom === false && <UseAnimations animation={alertCircle} size={128} />}
+								{isNavigatingAtom === false /*&& <UseAnimations animation={alertCircle} size={128} />*/}
 							</div>
 							<div css={labelCSS}>은행이 아직 열리지 않았어요!</div>
 						</div>

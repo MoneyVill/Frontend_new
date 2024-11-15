@@ -23,7 +23,7 @@ function index() {
 					</span>
 					{data?.length === 0 ? (
 						<div css={noneWrapperCSS}>
-							<UseAnimations animation={alertCircle} size={200} strokeColor={"rgba(0,0,0,0.4)"} />
+							{/* <UseAnimations animation={alertCircle} size={200} strokeColor={"rgba(0,0,0,0.4)"} /> */}
 							<h3>등록된 직업 목록이 없어요</h3>
 						</div>
 					) : (

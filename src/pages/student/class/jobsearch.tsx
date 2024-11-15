@@ -47,7 +47,7 @@ function jobsearch() {
 					)}
 					{jobList.length === 0 && (
 						<div css={noneWrapperCSS}>
-							<UseAnimations animation={alertCircle} size={200} strokeColor={"rgba(0,0,0,0.4)"} />
+							{/* <UseAnimations animation={alertCircle} size={200} strokeColor={"rgba(0,0,0,0.4)"} /> */}
 							<span css={titleCSS}>
 								현재 사람을 구하는 <b>&nbsp;직업</b>이 없어요!
 							</span>

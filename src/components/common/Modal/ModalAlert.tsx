@@ -1,8 +1,8 @@
 import React from "react"
 import ModalContent from "./ModalContent"
 import { css } from "@emotion/react"
-// import UseAnimations from "react-useanimations"
-// import alertTriangle from "react-useanimations/lib/alertTriangle"
+import UseAnimations from "react-useanimations"
+import alertTriangle from "react-useanimations/lib/alertTriangle"
 import Button from "../Button/Button"
 
 type ModalAlertProps = {
@@ -16,7 +16,7 @@ type ModalAlertProps = {
 }
 
 function ModalAlert({ content, proceed, closeComp, width, title, titleSize, forChild }: ModalAlertProps) {
-	const ICON = <div css={css`margin-bottom: -16px;`}><UseAnimations animation={alertTriangle} size={128} /></div>
+	// const ICON = <div css={css`margin-bottom: -16px;`}><UseAnimations animation={alertTriangle} size={128} /></div>
 
 	const CONTENT: JSX.Element = (
 		<div css={contentWrapperCSS}>
@@ -48,7 +48,7 @@ function ModalAlert({ content, proceed, closeComp, width, title, titleSize, forC
 		</div>
 	)
 
-	return <ModalContent title={title} titleSize={titleSize} width={width} icon={ICON} content={CONTENT} forChild={forChild} />
+	return <ModalContent title={title} titleSize={titleSize} width={width} /*icon={ICON}*/ content={CONTENT} forChild={forChild} />
 }
 
 const contentWrapperCSS = css`

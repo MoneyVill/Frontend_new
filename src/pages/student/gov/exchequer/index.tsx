@@ -26,7 +26,7 @@ function index() {
 				<div css={contentCSS}>
 					{exchequerList.length === 0 ? (
 						<div css={noneWrapperCSS}>
-							<UseAnimations animation={alertCircle} size={200} strokeColor={"rgba(0,0,0,0.4)"} />
+							{/* <UseAnimations animation={alertCircle} size={200} strokeColor={"rgba(0,0,0,0.4)"} /> */}
 							<h3>등록된 세금 목록이 없어요</h3>
 						</div>
 					) : (

@@ -29,7 +29,7 @@ export default function Document() {
 			<meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
 			<meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
 			<body>
-				<link href="https://webfontworld.github.io/sunn/SUIT.css" rel="stylesheet"></link>
+				{/* <link href="https://webfontworld.github.io/sunn/SUIT.css" rel="stylesheet"></link> */}
 				{/* modal이 렌더링 될 위치 */}
 				<div id="portal" />
 

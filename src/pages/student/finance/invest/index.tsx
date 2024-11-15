@@ -203,7 +203,7 @@ function index() {
 									height: 128px;
 								`}
 							>
-								{isNavigatingAtom === false && <UseAnimations animation={alertCircle} size={128} />}
+								{isNavigatingAtom === false /*&& <UseAnimations animation={alertCircle} size={128} />*/}
 							</div>
 							<div css={labelCSS}>투자 종목이 없어요!</div>
 						</div>
