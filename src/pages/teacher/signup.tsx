@@ -205,15 +205,13 @@ function Signup() {
 		checkValidPW2Handler()
 
 		if (validState.name && validState.id && validState.password && validState.password2) {
-			// FormData 객체 생성
-			const formData = new FormData()
-			formData.append("name", inputState.name)
-			formData.append("identity", inputState.id)
-			formData.append("password", inputState.password)
-			formData.append("checkedPassword", inputState.password)
-
 			postTeacherAPI({
-				body: formData,
+				body: {
+					name: inputState.name,
+					identity: inputState.id,
+					password: inputState.password,
+					checkedPassword: inputState.password,
+				},
 			})
 				.then(() => {
 					router.push("/teacher/login")
