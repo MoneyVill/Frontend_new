@@ -9,6 +9,7 @@ import { KOREAN_ONLY, GRADE_ONLY, CLASS_ONLY } from "@/util/regex"
 import LoadImage from "@/components/common/LoadImage/LoadImage"
 import { postCreateNationAPI } from "@/api/teacher/user/postCreateNationAPI"
 import useGetTokenStatus from "@/hooks/useGetTokenStatus"
+import { setCookie } from '@/api/cookie'
 
 const inputReducer = (
 	state: { school: string; grade: string; class: string; nation: string; currency: string },
@@ -244,6 +245,7 @@ function create() {
 				},
 			})
 				.then((res) => {
+					setCookie("Authorization", res, { path: "/", maxAge: 30 * 24 * 60 * 60 })
 					setPhase(() => 2)
 				})
 				.catch((err) => {
