@@ -6,7 +6,7 @@ export default function Document() {
 			<Head>
 				{/* 기존 링크 및 메타 태그 */}
 				<link rel="shortcut icon" href="/favicon.ico" />
-				<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+				<meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 				<link rel="manifest" href="/manifest.json" />
 				<meta name="theme-color" content="#fffae2" />
 				<link rel="apple-touch-icon" sizes="57x57" href="apple-touch-icon-57x57.png" />
