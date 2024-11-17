@@ -5,7 +5,7 @@ import { getCookie, removeCookie } from "./cookie"
  * 인증이 필요 없는 기본 요청
  */
 export const defaultInstance = axios.create({
-	baseURL: process.env.NEXT_PUBLIC_BASE_URL,
+	baseURL: "/api",
 	withCredentials: false,
 })
 
@@ -13,7 +13,7 @@ export const defaultInstance = axios.create({
  * 인증이 필요한 기본 요청
  */
 export const tokenInstance = axios.create({
-	baseURL: process.env.NEXT_PUBLIC_BASE_URL,
+	baseURL: "/api",
 })
 
 /**
@@ -67,7 +67,7 @@ tokenInstance.interceptors.response.use(
  * 인증이 필요 없는 formData 요청
  */
 export const formDataInstance = axios.create({
-	baseURL: process.env.NEXT_PUBLIC_BASE_URL,
+	baseURL: "/api",
 	withCredentials: false,
 })
 
@@ -75,7 +75,7 @@ export const formDataInstance = axios.create({
  * 인증이 필요한 formData 요청
  */
 export const formDataTokenInstance = axios.create({
-	baseURL: process.env.NEXT_PUBLIC_BASE_URL,
+	baseURL: "/api",
 	headers: {
 		"Content-Type": "multipart/form-data",
 	},
