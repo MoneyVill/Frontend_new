@@ -65,25 +65,28 @@ function login() {
 				setTokenStatus({showMessage: false}).then((res) => {
 					console.log('여기에 할일')
 				})
-				// getTokenStatusAPI().then((res) => {
-				// 	console.log(res)
+				getTokenStatusAPI().then((res) => {
+					console.log(res)
 
-				// 	if (res.role == "STUDENT") {
-				// 		if (res.status == "require_submit_code") {
-				// 			router.push("/student/enter")
-				// 		}
-				// 		if (res.status == "waiting") {
-				// 			router.push("/student/check")
-				// 		}
-				// 		if (res.status == "require_refresh_token") {
-				// 			// 	console.log("홈이다!")
-				// 			router.push("/student/check")
-				// 		}
-				// 		if (res.status == "approved") {
-				// 			router.push("/student/home")
-				// 		}
-				// 	}
-				// })
+					if (res.role == "STUDENT") {
+						if (res.status == "require_submit_code") {
+							router.push("/student/enter")
+						}
+						// if (res.status == "waiting") {
+						// 	router.push("/student/check")
+						// }
+						// if (res.status == "require_refresh_token") {
+						// 	// 	console.log("홈이다!")
+						// 	router.push("/student/check")
+						// }
+						if (res.status == "approved") {
+							//배포용
+							router.push("https://jungle-school.xyz/client")
+							//로컬용
+							// router.push("/student/home")
+						}
+					}
+				})
 			})
 
 			.catch((error) => {
