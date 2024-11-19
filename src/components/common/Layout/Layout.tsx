@@ -3,7 +3,6 @@ import SideBar from "@/components/teacher/layout/SideBar/SideBar"
 import { useRouter } from "next/router"
 import { OverlayScrollbarsComponent } from "overlayscrollbars-react"
 import TransitionWrapper from "@/components/student/layout/TransitionWrapper/TransitionWrapper"
-import NavBar from "@/components/student/layout/NavBar/NavBar"
 import { getNationAPI } from "@/api/common/getNationAPI"
 import { nationData, tokenStatus } from "@/store/store"
 import { useSetAtom, useAtom } from "jotai"
@@ -260,9 +259,7 @@ function Layout({ children }: LayoutProps) {
 		)
 	} else if (separator === "student") {
 		return (
-			<NavBar>
-				<TransitionWrapper>{children}</TransitionWrapper>
-			</NavBar>
+			<TransitionWrapper>{children}</TransitionWrapper>
 		)
 	} else {
 		return (
