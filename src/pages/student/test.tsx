@@ -12,7 +12,7 @@ function test() {
 
 	return (
 		<div>
-			<PageHeader title={"아이코"} />
+			<PageHeader title={"머니빌"} />
 			
 			test
 			<div css={imgWrapperCSS}>

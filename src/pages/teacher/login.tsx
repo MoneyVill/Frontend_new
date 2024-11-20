@@ -131,7 +131,7 @@ function login() {
 				</div>
 				<div css={loginSectionCSS}>
 					<div css={loginHeaderCSS}>
-						<div css={headerLabelCSS}>아이코에 오신 것을</div>
+						<div css={headerLabelCSS}>머니빌에 오신 것을</div>
 						<div css={headerLabelCSS}>환영합니다!</div>
 					</div>
 					<div css={loginFormCSS}>

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react"
 import QRScanner from "./QRScanner"
 import { css } from "@emotion/react"
 
-function QRScannerModal({ closeComp, compState, type, id }: { closeComp?: Function; compState: boolean; type: 'ico_rental' | 'ico_purchase'; id: number; }) {
+function QRScannerModal({ closeComp, compState, type, id }: { closeComp?: Function; compState: boolean; type: 'moenyvill_rental' | 'moenyvill_purchase'; id: number; }) {
 	const [unmount, setUnmount] = useState<boolean>(false)
 
 	useEffect(() => {

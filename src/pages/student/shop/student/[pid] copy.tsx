@@ -66,8 +66,8 @@ function product() {
 						closeComp={closeShowQR}
 						transition={"scale"}
 						content={
-							<ShowQR type={"ico_purchase"} id={data.id} time={time} />
-							// <QRScannerModal compState={compState} type={data.rental ? "ico_rental" : "ico_purchase"} id={data.id} />
+							<ShowQR type={"moenyvill_purchase"} id={data.id} time={time} />
+							// <QRScannerModal compState={compState} type={data.rental ? "moenyvill_rental" : "moenyvill_purchase"} id={data.id} />
 						}
 					/>
 
@@ -75,7 +75,7 @@ function product() {
 						compState={scanQRState}
 						closeComp={closeScanQR}
 						transition={"scale"}
-						content={<QRScannerModal compState={scanQRState} type={"ico_purchase"} id={data.id} />}
+						content={<QRScannerModal compState={scanQRState} type={"moenyvill_purchase"} id={data.id} />}
 					/>
 				</React.Fragment>
 			)}

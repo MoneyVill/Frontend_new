@@ -16,6 +16,7 @@ const withPWA = require("next-pwa")({
 	},
 
 	async rewrites() {
+	  console.log('Rewriting API calls...')
 	  return [
 		{
 		  source: "/api/:path*",

@@ -49,7 +49,7 @@ function index() {
 							`}
 							sizes={"128px"}
 						/>
-						ICO
+						MoneyVill
 					</div>
 					<div onClick={openComp} css={sideMenuButtonWrapperCSS}>
 						<img

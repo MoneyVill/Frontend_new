@@ -14,7 +14,7 @@ import { useRouter } from "next/router"
 
 type QRScannerProps = {
 	closeComp: any
-	type: "ico_rental" | "ico_purchase"
+	type: "moenyvill_rental" | "moenyvill_purchase"
 	id: number
 }
 const QRScanner = ({ closeComp, type, id }: QRScannerProps) => {
@@ -63,7 +63,7 @@ const QRScanner = ({ closeComp, type, id }: QRScannerProps) => {
 					closeComp && closeComp()
 					return
 				}
-				if (bodyData[0] === "ico_rental") {
+				if (bodyData[0] === "moenyvill_rental") {
 					postRentalTeacherProductsAPI({ body: { id: Number(bodyData[1]), unixTime: Number(bodyData[2]) } })
 						.then((res) => {
 							noti({ content: <NotiTemplate type={"ok"} content={"물건을 빌렸어요!"} />, duration: 5000 })
@@ -90,7 +90,7 @@ const QRScanner = ({ closeComp, type, id }: QRScannerProps) => {
 				}
 
 
-				if (bodyData[0] === "ico_purchase") {
+				if (bodyData[0] === "moenyvill_purchase") {
 					postPurchaseStudentProductsAPI({ body: { id: Number(bodyData[1]), unixTime: Number(bodyData[2]) } })
 						.then((res) => {
 							noti({ content: <NotiTemplate type={"ok"} content={"물건을 구매했어요!"} />, duration: 5000 })

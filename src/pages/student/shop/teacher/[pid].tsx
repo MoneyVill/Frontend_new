@@ -191,7 +191,7 @@ function product() {
 						closeComp={closeComp}
 						transition={"scale"}
 						content={
-							<QRScannerModal compState={compState} type={data.rental ? "ico_rental" : "ico_purchase"} id={data.id} />
+							<QRScannerModal compState={compState} type={data.rental ? "moenyvill_rental" : "moenyvill_purchase"} id={data.id} />
 						}
 					/>
 				)}

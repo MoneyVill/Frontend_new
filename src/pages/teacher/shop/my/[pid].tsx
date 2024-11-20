@@ -57,7 +57,7 @@ function Product() {
           closeComp={closeComp}
           compState={compState}
           transition="scale"
-          content={<ShowQR type="ico_rental" id={data?.id} time={time} />}
+          content={<ShowQR type="moenyvill_rental" id={data?.id} time={time} />}
         />
       )}
       <div css={headerCSS}>

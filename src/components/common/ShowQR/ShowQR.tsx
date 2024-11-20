@@ -7,7 +7,7 @@ import useNotification from "@/hooks/useNotification"
 import NotiTemplate from "../StackNotification/NotiTemplate"
 
 type ShowQRProps = {
-	type: "ico_rental" | "ico_purchase"
+	type: "moenyvill_rental" | "moenyvill_purchase"
 	id: number
 	time: number
 	closeComp?: Function
