@@ -21,10 +21,10 @@ function GovRuleClassCreate({
 }) {
 	const queryClient = useQueryClient()
 	const createMutation = useMutation((a: number) =>
-		postGovRuleAPI({ body: { title: inputState.title, detail: inputState.content } }),
+		postGovRuleAPI({ body: { title: inputState.title, detail: inputState.content, answer: inputState.answer } }),
 	)
 	const updateMutation = useMutation((idx: number) =>
-		putGovRuleAPI({ idx, body: { title: inputState.title, detail: inputState.content } }),
+		putGovRuleAPI({ idx, body: { title: inputState.title, detail: inputState.content, answer: inputState.answer } }),
 	)
 
 	const submit = () => {

@@ -6,18 +6,22 @@ type FormInputProps = {
 	children: any
 	titleChangeHandler: React.ChangeEventHandler
 	contentChangeHandler: React.ChangeEventHandler
+	answerChangeHandler?: (value: boolean) => void
 	titlePlaceHolder?: string
 	contentPlaceHolder?: string
 	noTitle?: boolean
+	showToggleBox?: boolean;
 }
 function FormInput({
 	children,
 	titleChangeHandler,
 	contentChangeHandler,
+	answerChangeHandler,
 	titlePlaceHolder,
 	contentPlaceHolder,
 	noTitle,
 	inputState,
+	showToggleBox = false,
 }: FormInputProps) {
 	const contentRef = useRef<HTMLTextAreaElement>(null)
 
@@ -52,11 +56,30 @@ function FormInput({
 		/>
 	)
 
+	const toggleBox = 
+		showToggleBox && answerChangeHandler ? (
+		<div css={toggleBoxCSS}>
+			<button
+				css={toggleButtonCSS(inputState.answer === true, true)}
+				onClick={() => answerChangeHandler(true)}
+			>
+				O
+			</button>
+			<button
+				css={toggleButtonCSS(inputState.answer === false, false)}
+				onClick={() => answerChangeHandler(false)}
+			>
+				X
+			</button>
+		</div>
+	) : null;
+
 	return (
 		<div css={wrapperCSS}>
 			{noTitle !== true && titleInput}
 			<div css={contentWrapperCSS}>
 				{contentInput}
+				{toggleBox}
 				{children}
 			</div>
 			
@@ -118,6 +141,30 @@ const contentWrapperCSS = css`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	position: relative;
+`
+
+const toggleBoxCSS = css`
+	display: flex;
+	justify-content: flex-start;
+	position: absolute;
+	bottom: 8px;
+	left: 0;
+	margin-top: 8px;
+`
+
+const toggleButtonCSS = (isActive: boolean, isOButton: boolean) => css`
+	background-color: ${isActive ? (isOButton ? "#4caf50" : "#f44336") : "#b0b0b0"};
+	color: white;
+	border: none;
+	border-radius: 4px;
+	padding: 8px 20px;
+	cursor: pointer;
+	margin: 0 8px;
+	font-size: 1.2em;
+	&:hover {
+		opacity: 0.8;
+	}
 `
 
 export default FormInput

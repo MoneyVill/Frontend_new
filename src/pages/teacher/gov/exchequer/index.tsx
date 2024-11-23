@@ -21,18 +21,18 @@ function index() {
 	)
 
 	console.log(data)
-	const renderExchequerList = data?.map((el, idx) => {
-		return (
-			<GovExchequerDetail
-				showIdx={idx + 1}
-				actualIdx={el.id}
-				title={el.title}
-				content={el.detail}
-				taxAspect={el.type}
-				taxValue={el.amount}
-			/>
-		)
-	})
+	// const renderExchequerList = data?.map((el, idx) => {
+	// 	return (
+	// 		<GovExchequerDetail
+	// 			showIdx={idx + 1}
+	// 			actualIdx={el.id}
+	// 			title={el.title}
+	// 			content={el.detail}
+	// 			taxAspect={el.type}
+	// 			taxValue={el.amount}
+	// 		/>
+	// 	)
+	// })
 
 	return (
 		<div css={contentWrapperCSS}>
@@ -68,7 +68,7 @@ function index() {
 				taxAspect={0}
 				taxValue={11}
 			/> */}
-			{renderExchequerList}
+			{/* {renderExchequerList} */}
 		</div>
 	)
 }

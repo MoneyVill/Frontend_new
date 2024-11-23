@@ -3,6 +3,7 @@ export type getGovRuleType = {
 	title: string
 	detail: string
 	dateTime: string
+	answer: boolean
 }
 
 export type getNationType = {

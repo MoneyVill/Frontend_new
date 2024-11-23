@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react";
 import { css } from "@emotion/react"
 import Form from "../../common/Form/Form"
 
@@ -8,7 +8,7 @@ import Button from "@/components/common/Button/Button"
 import useCompHandler from "@/hooks/useCompHandler"
 import AnimatedRenderer from "@/components/common/AnimatedRenderer/AnimatedRenderer"
 import FormCreator from "../../common/Form/FormCreator"
-import GoveRuleClassCreate from "./GovRuleClassCreate"
+import GovRuleClassCreate from "./GovRuleClassCreate"
 import { useQuery, useQueryClient } from "@tanstack/react-query"
 import { getGovRuleAPI } from "@/api/teacher/gov/getGovRuleAPI"
 import { getGovRuleType } from "@/types/teacher/apiReturnTypes"
@@ -16,6 +16,7 @@ import { dateFormatter } from "@/util/dateFormatter"
 
 function GovRuleClass() {
 	const [openComp, closeComp, compState] = useCompHandler()
+	const [isCorrect, setIsCorrect] = useState<boolean>(false); // 초기값을 false로 설정
 
 	const { data, isError, isLoading, isFetching, error, isSuccess, refetch } = useQuery<getGovRuleType[]>(
 		["teacher", "govRule"],
@@ -23,41 +24,12 @@ function GovRuleClass() {
 		// { staleTime: 200000 },
 	)
 
-
-
 	const renderRule =
 		data &&
 		data.map((el, idx) => {
 			const date = dateFormatter(el.dateTime)
-
-			return <GovRuleClassDetail showIdx={idx + 1} actualIdx={el.id} title={el.title} content={el.detail} date={date} />
+			return <GovRuleClassDetail showIdx={idx + 1} actualIdx={el.id} title={el.title} content={el.detail} date={date} isCorrect={el.answer}/>
 		})
-
-	const rule = `
-    학급 규칙 내용입니다. 입섬 로렘...
-    학급 규칙 내용입니다. 입섬 로렘...
-    학급 규칙 내용입니다. 입섬 로렘...
-    학급 규칙 내용입니다. 입섬 로렘...
-    학급 규칙 내용입니다. 입섬 로렘...
-    학급 규칙 내용입니다. 입섬 로렘...학급 규칙 내용입니다. 입섬 로렘...학급 규칙 내용입니다. 입섬 로렘...
-    학급 규칙 내용입니다. 입섬 로렘...
-    학급 규칙 내용입니다. 입섬 로렘...
-    학급 규칙 내용입니다. 입섬 로렘...
-    학급 규칙 내용입니다. 입섬 로렘...
-    학급 규칙 내용입니다. 입섬 로렘...
-    v
-    학급 규칙 내용입니다. 입섬 로렘...
-    학급 규칙 내용입니다. 입섬 로렘...
-    학급 규칙 내용입니다. 입섬 로렘...
-    학급 규칙 내용입니다. 입섬 로렘...
-    v
-    학급 규칙 내용입니다. 입섬 로렘...
-    학급 규칙 내용입니다. 입섬 로렘...
-    학급 규칙 내용입니다. 입섬 로렘...
-    학급 규칙 내용입니다. 입섬 로렘...
-    학급 규칙 내용입니다. 입섬 로렘...
-    학급 규칙 내용입니다. 입섬 로렘...
-    `
 
 	return (
 		<div css={contentWrapperCSS}>
@@ -87,10 +59,12 @@ function GovRuleClass() {
 			/> */}
 
 			<FormCreator
-				subComp={<GoveRuleClassCreate />}
+				subComp={<GovRuleClassCreate />}
 				showIdx={dateFormatter.length}
 				compState={compState}
 				closeComp={closeComp}
+				isCorrect={isCorrect}
+				showToggleBox={true}
 			/>
 			{/* <FormCreator subComp={<CreateRule />} idx={0} compState={compState} /> */}
 
@@ -118,4 +92,5 @@ const titleCSS = css`
 const descCSS = css`
 	margin-bottom: 36px;
 `
+
 export default GovRuleClass

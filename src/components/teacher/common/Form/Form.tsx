@@ -13,6 +13,8 @@ type FormProps = {
 	frontComp?: any
 	noTitle?: boolean
 	closeComp?: Function
+	answerCorrect?: boolean
+	showToggleBox?: boolean;
 	initHeight?: string
 }
 
@@ -26,6 +28,9 @@ const inputReducer = (state: any, action: any) => {
 	if (action.type === "CHANGE_SUB") {
 		return { ...state, sub: { ...state.sub, [action.value.key]: action.value.value } }
 	}
+	if (action.type === "CHANGE_ANSWER") {
+		return { ...state, answer: action.value }
+	}
 }
 
 function Form({
@@ -38,6 +43,8 @@ function Form({
 	frontComp,
 	noTitle,
 	closeComp,
+	answerCorrect,
+	showToggleBox = false,
 	initHeight
 }: FormProps) {
 	const [isOpened, setIsOpened] = useState<boolean>(false)
@@ -51,6 +58,7 @@ function Form({
 		title: mainInit ? mainInit.title : "",
 		content: mainInit ? mainInit.content : "",
 		sub: subInit ? subInit : {},
+		answer: answerCorrect !== undefined ? answerCorrect : null,
 	})
 
 	const titleChangeHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -76,6 +84,10 @@ function Form({
 			dispatchInput({ type: "CHANGE_SUB", value: { key, value } })
 		}
 	}
+
+	const answerChangeHandler = answerCorrect !== undefined ? (value: boolean) => {
+		dispatchInput({ type: "CHANGE_ANSWER", value });
+	  } : undefined;
 
 	const closeHandler = () => {
 		setIsOpened(() => false)
@@ -109,9 +121,11 @@ function Form({
 					inputState={inputState}
 					titleChangeHandler={titleChangeHandler}
 					contentChangeHandler={contentChangeHandler}
+					{...(answerChangeHandler ? { answerChangeHandler } : {})}
 					titlePlaceHolder={titlePlaceHolder}
 					contentPlaceHolder={contentPlaceHolder}
 					noTitle={noTitle}
+					showToggleBox={showToggleBox}
 				>
 					<div css={subInputWrapperCSS}>{subInputRender}</div>
 				</FormInput>
