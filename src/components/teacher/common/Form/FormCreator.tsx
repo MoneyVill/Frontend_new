@@ -18,11 +18,13 @@ type FormCreatorProps = {
 	submitLabel?: string
 	mainInit?: { title: string; content: string }
 	subInit?: any
+	isCorrect?: boolean
+	showToggleBox?: boolean;
 
 	initHeight?: string;
 }
 
-function FormCreator({ subComp, frontComp, showIdx, mainInit, subInit, closeComp, titlePlaceHolder, contentPlaceHolder, submitLabel, initHeight, isNoTitle = false, compState = true}: FormCreatorProps) {
+function FormCreator({ subComp, frontComp, showIdx, mainInit, subInit, closeComp, titlePlaceHolder, contentPlaceHolder, submitLabel, initHeight, isCorrect, showToggleBox = false, isNoTitle = false, compState = true}: FormCreatorProps) {
 	if (compState || !closeComp) {
 		return (
 			<Form
@@ -36,6 +38,8 @@ function FormCreator({ subComp, frontComp, showIdx, mainInit, subInit, closeComp
 				noTitle={isNoTitle}
 				frontComp={frontComp}
 				initHeight={initHeight}
+				answerCorrect={isCorrect}
+				showToggleBox={showToggleBox}
 			/>
 		)
 	} else {

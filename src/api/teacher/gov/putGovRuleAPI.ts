@@ -5,7 +5,8 @@ type paramsType = {
     idx: number;
     body: {
         title: string,
-        detail: string
+        detail: string,
+        answer: boolean
     }
 }
 

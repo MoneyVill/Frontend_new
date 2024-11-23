@@ -16,9 +16,10 @@ type GovRuleClassDetailProps = {
 	date: string
 	showIdx: number
 	actualIdx?: number
+	isCorrect?: boolean;
 }
 
-function GovRuleClassDetail({ title, content, date, showIdx, actualIdx }: GovRuleClassDetailProps) {
+function GovRuleClassDetail({ title, content, date, showIdx, actualIdx, isCorrect }: GovRuleClassDetailProps) {
 	const [openComp, closeComp, compState] = useCompHandler()
 	const [openDeleteModal, closeDeleteModal, deleteModalState] = useCompHandler()
 	const [isEdit, setIsEdit] = useState<boolean>(false)
@@ -55,7 +56,7 @@ function GovRuleClassDetail({ title, content, date, showIdx, actualIdx }: GovRul
 	return (
 		<div ref={wrapperRef} >
 			<Modal compState={deleteModalState} closeComp={closeDeleteModal} transition={'scale'} content={<ModalAlert title={'학급 규칙을 삭제합니다.'} titleSize={'var(--teacher-h2)'} proceed={deleteHandler} width={'480px'} content={['학생들이 더이상 해당 학급 규칙을 조회할 수 없습니다!']} />}/>
-			<FormCreator subComp={<GovRuleClassCreate idx={actualIdx} />} showIdx={showIdx} actualIdx={actualIdx} compState={compState} closeComp={closeEditHandler} mainInit={{title, content}} initHeight={`${wrapperRef.current && wrapperRef.current.clientHeight}px`} />
+			<FormCreator subComp={<GovRuleClassCreate idx={actualIdx} />} showIdx={showIdx} actualIdx={actualIdx} compState={compState} closeComp={closeEditHandler} mainInit={{title, content}} isCorrect={isCorrect} showToggleBox={true} initHeight={`${wrapperRef.current && wrapperRef.current.clientHeight}px`} />
 			<div css={WrapperCSS({isEdit})}>
 				<CommonListElement idx={showIdx} dropdownList={dropdownList}>
 					<div css={detailWrapperCSS}>

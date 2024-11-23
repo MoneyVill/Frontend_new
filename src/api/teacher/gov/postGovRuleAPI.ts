@@ -4,7 +4,8 @@ import { successReturnType } from "@/types/common/apiReturnTypes"
 type paramsType = {
     body: {
         title: string,
-        detail: string
+        detail: string,
+        answer: boolean
     }
 }
 
