@@ -90,7 +90,7 @@ function Layout({ children }: LayoutProps) {
 			require_approval: { url: "/student/check", message: "입국 심사를 기다리고 있어요!" },
 			approved: { url: process.env.NODE_ENV === "production"
 								? "https://jungle-school.xyz/client"
-								: "/student/home", message: "잘못된 요청입니다." },
+								: "http://localhost:5173", message: "잘못된 요청입니다." },
 		},
 		TEACHER: {
 			require_approval: { url: "/teacher/cert", message: "교사 인증서 승인 대기중입니다." },
