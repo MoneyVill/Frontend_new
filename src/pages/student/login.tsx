@@ -80,10 +80,9 @@ function login() {
 						// 	router.push("/student/check")
 						// }
 						if (res.status == "approved") {
-							//배포용
-							router.push("https://jungle-school.xyz/client")
-							//로컬용
-							// router.push("/student/home")
+							process.env.NODE_ENV === "production"
+								? router.push("https://jungle-school.xyz/client")
+								: router.push("/student/home");
 						}
 					}
 				})

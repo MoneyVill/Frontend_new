@@ -51,7 +51,9 @@ function enter() {
 				// }
 
 				if (res.status == "approved") {
-					router.push("/student/home")
+					process.env.NODE_ENV === "production"
+						? router.push("https://jungle-school.xyz/client")
+						: router.push("/student/home");
 				}
 			}
 		})

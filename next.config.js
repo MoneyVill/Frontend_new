@@ -20,8 +20,9 @@ const withPWA = require("next-pwa")({
 	  return [
 		{
 		  source: "/api/:path*",
-		  destination: "https://moneyvill.xyz/api/:path*",
-		//   destination: "http://localhost:8081/api/:path*",
+		  destination: process.env.NODE_ENV === "production"
+		  	? "https://moneyvill.xyz/api/:path*"
+		  	: "http://localhost:8081/api/:path*"
 		},
 	  ];
 	},
@@ -38,8 +39,9 @@ module.exports = {
     return [
       {
         source: "/api/:path*",
-        destination: "https://moneyvill.xyz/api/:path*",
-        // destination: "http://localhost:8081/api/:path*",
+        destination: process.env.NODE_ENV === "production"
+		  	? "https://moneyvill.xyz/api/:path*"
+		  	: "http://localhost:8081/api/:path*"
       },
     ];
   },
