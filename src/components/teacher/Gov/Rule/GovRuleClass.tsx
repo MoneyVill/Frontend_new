@@ -24,6 +24,7 @@ function GovRuleClass() {
 		// { staleTime: 200000 },
 	)
 
+<<<<<<< Updated upstream
 	const renderRule =
 		data &&
 		data.map((el, idx) => {
@@ -31,6 +32,20 @@ function GovRuleClass() {
 			return <GovRuleClassDetail showIdx={idx + 1} actualIdx={el.id} title={el.title} content={el.detail} date={date} isCorrect={el.answer}/>
 		})
 
+=======
+
+
+	// const renderRule =
+	// 	data &&
+	// 	data.map((el, idx) => {
+	// 		const date = dateFormatter(el.dateTime)
+
+	// 		return <GovRuleClassDetail showIdx={idx + 1} actualIdx={el.id} title={el.title} content={el.detail} date={date} />
+	// 	})
+
+	const rule = ``
+
+>>>>>>> Stashed changes
 	return (
 		<div css={contentWrapperCSS}>
 			<div css={titleCSS}>
@@ -68,7 +83,7 @@ function GovRuleClass() {
 			/>
 			{/* <FormCreator subComp={<CreateRule />} idx={0} compState={compState} /> */}
 
-			{renderRule}
+			{/* {renderRule} */}
 		</div>
 	)
 }
