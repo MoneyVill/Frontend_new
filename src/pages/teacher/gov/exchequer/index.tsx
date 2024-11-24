@@ -20,7 +20,11 @@ function index() {
 		// { staleTime: 200000 },
 	)
 
+<<<<<<< Updated upstream
 	console.log(data)
+=======
+	// console.log(data)
+>>>>>>> Stashed changes
 	// const renderExchequerList = data?.map((el, idx) => {
 	// 	return (
 	// 		<GovExchequerDetail
@@ -60,14 +64,18 @@ function index() {
 				closeComp={closeComp}
 			/>
 
-{/* <GovExchequerDetail
+{/* {<GovExchequerDetail
 				showIdx={0}
 				actualIdx={0}
 				title={"세금 제목 1"}
 				content={"세금 내용입니다. 입섬 로렘..."}
 				taxAspect={0}
 				taxValue={11}
+<<<<<<< Updated upstream
 			/> */}
+=======
+			/> } */}
+>>>>>>> Stashed changes
 			{/* {renderExchequerList} */}
 		</div>
 	)

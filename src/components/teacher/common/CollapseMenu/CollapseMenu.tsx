@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react"
 import { css } from "@emotion/react"
 
 type CollapseMenuProps = {
-	children: JSX.Element
+	children: React.ReactNode;
 	title: JSX.Element
 	fontSize: string
 	bracketSize: string
@@ -37,7 +37,7 @@ function CollapseMenu({ children, title, fontSize, bracketSize, border, marginBo
 			<div css={contentWrapperCSS({ isOpened, contentWrapperRef })}>
 				<div ref={contentWrapperRef}>
 					<div css={spaceCSS} />
-					{children}
+					{children && <>{children}</>}
 					{refresh && <div />}
 				</div>
 			</div>

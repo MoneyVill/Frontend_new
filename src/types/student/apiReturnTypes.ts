@@ -68,6 +68,7 @@ export type getClassRuleType = {
 	id: number
 	title: string
 	detail: string
+	answer: boolean //진우
 }
 
 export type getStudentListType = {
