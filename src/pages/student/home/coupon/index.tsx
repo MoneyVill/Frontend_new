@@ -20,9 +20,6 @@ function coupon() {
 		// { staleTime: 200000 },
 	)
 
-
-
-
 	return (
 		<React.Fragment>
 			<PageHeader title={"쿠폰함"} />

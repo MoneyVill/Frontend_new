@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useState } from "react";
 import PageHeader from "@/components/student/layout/PageHeader/PageHeader"
 import ContentWrapper from "@/components/student/common/ContentWrapper/ContentWrapper"
 import HomeAssetDetail from "@/components/student/Home/AssetDetail/HomeAssetDetail"
@@ -19,7 +19,12 @@ function asset() {
 	)
 	const [nation] = useGetNation()
 	const [isNavigatingAtom, setIsNavigatingAtom] = useAtom(isNavigating)
+	const [isClient, setIsClient] = useState(false);
 
+	// Ensure this component renders only in the browser
+	useEffect(() => {
+		setIsClient(true);
+	}, []);
 	return (
 		<React.Fragment>
 			<PageHeader title={"국고"} />
@@ -42,26 +47,24 @@ function asset() {
 						
 					`}
 				>
-					{isLoading && (
+					{isLoading && isClient && (
 						<div
 							css={css`
 								flex: 1;
 								display: flex;
 								justify-content: center;
 								align-items: center;
-								
 							`}
 						>
-			
-								{isNavigatingAtom === false && (
-									<Loading
-										size={96}
-										labelSize={18}
-										labelMargin={"24px 0px 16px 0px"}
-										label={"세금 내역을 불러오는 중이에요!"}
-									/>
-								)}
-				
+							{isNavigatingAtom === false && (
+								<Loading
+									size={96}
+									labelSize={18}
+									labelMargin={"24px 0px 16px 0px"}
+									label={"세금 내역을 불러오는 중이에요!"}
+								/>
+							)}
+
 						</div>
 					)}
 					{data && <HomeAssetDetail tradeHistory={data} />}

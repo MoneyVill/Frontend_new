@@ -34,7 +34,7 @@ function HomeJobCard({name, job, wage, credit, backgroundColor, imgUrl }: HomeJo
 				</div>
         <div css={contentWrapperCSS}>
           <div css={nameIndicatorCSS}>{name}</div>
-          <div css={jobTextCSS}>{job ? job : '직업이 없어요.'}</div>
+          {/* <div css={jobTextCSS}>{job ? job : '직업이 없어요.'}</div> */}
           <div css={lineCSS}/>
           <div css={secondaryInfoWrapperCSS}>
             <div css={creditIndicatorCSS}>{credit}등급</div>
@@ -102,6 +102,7 @@ const jobImgWrapperCSS = css`
 `
 
 const imgCSS = css`
+  margin-top: 30px;
 	width: 100%;
   height: 100%;
   
@@ -110,6 +111,7 @@ const imgCSS = css`
 
 const contentWrapperCSS = css`
   margin-top: 30px;
+  margin-left: 30px;
   padding-right: 24px;
   flex: 1;
   position: relative;

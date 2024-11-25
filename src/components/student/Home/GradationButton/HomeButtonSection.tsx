@@ -18,7 +18,7 @@ function HomeButtonSection() {
   return (
     <div css={buttonSectionWrapperCSS}>
         <div css={columnCSS}>
-            <HomeGradationButton cssProps={css`width: 42%; height: 140px;`} backgroundColor={['#e0c3fc', '#8ec5fc']} onClick={() => {navigate('/student/home/coupon', 'bottomToTop')}}>
+            {/* <HomeGradationButton cssProps={css`width: 42%; height: 140px;`} backgroundColor={['#e0c3fc', '#8ec5fc']} onClick={() => {navigate('/student/home/coupon', 'bottomToTop')}}>
             
                 <div css={lsizeFontCSS}>
                     쿠폰을 써보아요.
@@ -29,8 +29,8 @@ function HomeButtonSection() {
                 
 
                 
-            </HomeGradationButton>
-            <HomeGradationButton cssProps={css`width: 54%; height: 140px;`} backgroundColor={['#a18cd1', '#fbc2eb']} onClick={() => {navigate('/student/home/exchequer', 'bottomToTop')}}>
+            </HomeGradationButton> */}
+            <HomeGradationButton cssProps={css`width: 50%; height: 140px;`} backgroundColor={['green', 'green']} onClick={() => {navigate('/student/home/exchequer', 'bottomToTop')}}>
                 <div css={msizeFontCSS}>
                     우리나라의 국고에
                 </div>
@@ -44,24 +44,34 @@ function HomeButtonSection() {
                     <LoadImage src={'/assets/home/exchequer.png'} alt={'exchequer'} wrapperCss={css`width: 120px; height: 80px;`}/>
                 </div>
             </HomeGradationButton>
-        </div>
-        <div css={columnCSS}>
-            <HomeGradationButton cssProps={css`width: 54%; height: 140px;`} backgroundColor={['#fa709a', '#fee140']} onClick={() => {navigate('/student/finance/deposit', 'bottomToTop')}}>
+            <HomeGradationButton cssProps={css`width: 50%; height: 140px;`} backgroundColor={['skyblue', 'pink']} onClick={() => {navigate('/student/finance/deposit', 'bottomToTop')}}>
                 <div css={lsizeFontCSS}>
-                    예금하러 가요!
+                    예금하러 가기!
                 </div>
-                <div css={[imageWrapperCSS, css`margin-top: 10px;`]}>
-                    <LoadImage src={'/assets/home/deposit.png'} alt={'exchequer'} wrapperCss={css`width: 120px; height: 80px;`} />
+                <div css={[imageWrapperCSS, css`margin-top: 1px;`]}>
+                    <LoadImage src={'/assets/home/deposit.png'} alt={'deposit'} wrapperCss={css`width: 120px; height: 80px;`} />
                 </div>
             </HomeGradationButton>
-            <HomeGradationButton cssProps={css`width: 42%; height: 140px;`} backgroundColor={['#84fab0', '#8fd3f4']} onClick={() => {navigate('/student/finance/invest', 'bottomToTop')}}>
+            </div>
+
+            <div css={columnCSS}>
+            <HomeGradationButton cssProps={css`width: 50%; height: 140px;`} backgroundColor={['black', 'white']} onClick={() => {navigate('/student/gov/rule', 'bottomToTop')}}>
                 <div css={lsizeFontCSS}>
-                    실전형 투자 체험
+                    퀴즈풀러 가기!
                 </div>
-                <div css={[imageWrapperCSS, css`margin-top: 15px;`]}>
-                    <LoadImage src={'/assets/home/stock.png'} alt={'exchequer'} wrapperCss={css`width: 120px; height: 77px;`} />
+                <div css={[imageWrapperCSS, css`margin-top: 1px;`]}>
+                    <LoadImage src={'/assets/home/quiz.png'} alt={'quiz'} wrapperCss={css`width: 120px; height: 80px;`} />
                 </div>
             </HomeGradationButton>
+            <HomeGradationButton cssProps={css`width: 50%; height: 140px;`} backgroundColor={['blue', 'red']} onClick={() => {navigate('/student/finance/invest', 'bottomToTop')}}>
+                <div css={lsizeFontCSS}>
+                    투자 체험하러 가기!
+                </div>
+                <div css={[imageWrapperCSS, css`margin-top: 1px;`]}>
+                    <LoadImage src={'/assets/home/stock.png'} alt={'stock'} wrapperCss={css`width: 120px; height: 77px;`} />
+                </div>
+            </HomeGradationButton>
+
         </div>
         
     </div>
@@ -70,7 +80,6 @@ function HomeButtonSection() {
 
 const buttonSectionWrapperCSS = css`
     width: 95%;
-    
 `
 
 const columnCSS = css`

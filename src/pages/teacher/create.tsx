@@ -278,7 +278,7 @@ function create() {
 							theme={"default"}
 							// customCss={inputCSS}
 							type="text"
-							placeholder="예) 부산송수초등학교"
+							placeholder="예) 정글초등학교"
 							onChange={(e) => {
 								dispatchInput({ type: "CHANGE_SCHOOL_NAME", value: e.target.value })
 							}}
@@ -318,7 +318,7 @@ function create() {
 
 					<div css={buttonWrapperCSS}>
 						<Button
-							theme={"highlighted"}
+							theme={"brownButton"}
 							width={"300px"}
 							height={"42px"}
 							text={"다음"}
@@ -366,7 +366,7 @@ function create() {
 
 					<div css={buttonWrapperCSS}>
 						<Button
-							theme={"highlighted"}
+							theme={"brownButton"}
 							width={"300px"}
 							height={"42px"}
 							text={"다음"}
@@ -377,8 +377,8 @@ function create() {
 				</div>
 				<div css={phaseWrapperCSS}>
 					{/* <UseAnimations animation={alertCircle} size={256} /> */}
-					<div css={successLabelCSS}>학급 경제가 성공적으로 생성되었습니다!</div>
-					<div css={successSubLabelCSS}>잠시 후, 학급 관리 페이지로 리다이렉트됩니다!</div>
+					<div css={successLabelCSS}>교실 생성 성공!</div>
+					<div css={successSubLabelCSS}>잠시 후, 교실 관리 페이지로 이동합니다!</div>
 				</div>
 			</div>
 		</div>
@@ -406,7 +406,7 @@ const gridCSS = ({ phase }: { phase: number }) => {
 const phaseWrapperCSS = css`
 	width: 100%;
 	height: 100%;
-	/* background-color: red; */
+	background-color: #81a521; 
 	display: flex;
 	flex-direction: column;
 	justify-content: center;

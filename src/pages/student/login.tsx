@@ -46,7 +46,7 @@ function login() {
 		})
 			.then((res) => {
 				setCookie("Authorization", res, { path: "/", maxAge: 30 * 24 * 60 * 60 })
-				
+
 				// getTokenStatusAPI()
 				// .then((res) => {
 				// 	if (res) {
@@ -62,7 +62,7 @@ function login() {
 				// 	})
 				// })
 
-				setTokenStatus({showMessage: false}).then((res) => {
+				setTokenStatus({ showMessage: false }).then((res) => {
 					console.log('여기에 할일')
 				})
 				getTokenStatusAPI().then((res) => {
@@ -143,7 +143,7 @@ function login() {
 					</div>
 
 					<Button
-						theme={"highlighted"}
+						theme={"brownButton"}
 						width={"90%"}
 						height={"42px"}
 						text={"로그인"}
@@ -165,7 +165,7 @@ const wrapperCSS = css`
 	/* flex-direction: column; */
 	width: 100%;
 	/* height: 100vh; */
-	/* background-color: red; */
+	background-color: #81a521;
 
 	@media (max-width: 1440px) {
 		flex-direction: column;
@@ -201,19 +201,15 @@ const loginSectionCSS = css`
 `
 
 const imageSectionCSS = css`
-	/* height: 100vh; */
 	overflow: hidden;
 	box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
 
-	/* @media (max-width: 1280px) {
-		display: flex;
-		justify-content: center;
-	} */
-
-	@media (max-width: 1440px) {
-		height: 40vh;
+	img {
+		width: 100%; 
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
 	}
-
 	@media (min-width: 1441px) {
 		flex: 1;
 	}

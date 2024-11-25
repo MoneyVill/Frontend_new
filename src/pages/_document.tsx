@@ -9,7 +9,7 @@ export default function Document() {
 				<meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
 				<link rel="manifest" href="/manifest.json" />
 				<meta name="theme-color" content="#fffae2" />
-				<link rel="apple-touch-icon" sizes="57x57" href="apple-touch-icon-57x57.png" />
+				<link rel="apple-touch-icon" sizes="57x57" href="apple-touch-icon-57x57.png" /> 
 				<link rel="apple-touch-icon" sizes="114x114" href="apple-touch-icon-114x114.png" />
 				<link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png" />
 				<link rel="apple-touch-icon" sizes="144x144" href="apple-touch-icon-144x144.png" />

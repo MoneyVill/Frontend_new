@@ -162,7 +162,7 @@ function login() {
 						</div>
 
 						<Button
-							theme={"highlighted"}
+							theme={"brownButton"}
 							width={"300px"}
 							height={"42px"}
 							text={"로그인"}
@@ -212,7 +212,7 @@ const wrapperCSS = css`
 	display: flex;
 	width: 100%;
 	height: 100%;
-
+	background-color: #81a521;
 	@media (max-width: 1440px) {
 		flex-direction: column;
 	}
@@ -240,6 +240,12 @@ const imageSectionCSS = css`
 	overflow: hidden;
 	box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
 
+	img {
+		width: 100%; 
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
 	@media (min-width: 1441px) {
 		flex: 1;
 	}

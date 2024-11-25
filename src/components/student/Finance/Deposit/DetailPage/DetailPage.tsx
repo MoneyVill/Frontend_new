@@ -133,8 +133,8 @@ function DetailPage({ data, refetch }: DetailPageProps) {
               <Button
 					text={"만기 수령"}
 					fontSize={`var(--student-h3)`}
-					width={"48%"}
-					theme={"vividPositive"}
+					width={"50%"}
+					theme={"brownButton"}
           margin={'24px 0px 0px 0px'}
 					onClick={() => {
             submitHandler()

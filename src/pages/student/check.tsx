@@ -76,22 +76,21 @@ function enter() {
 
 			<div
 				css={css`
-					/* margin-top: 24px; */
-					font-weight: 700;
-					font-size: 5.5vw;
-
-					/* margin-bottom: 24px; */
+					margin-top: 20px;
+					font-weight: 500;
+					font-size: 5vw;
+					margin-bottom: 20px;
 				`}
 			>
-				입국 심사를 통과할 때까지 기다려주세요.
+				선생님 승인을 기다려주세요.
 			</div>
 
 			<Button
 				text={"우리반으로 이동!"}
-				fontSize={`5vw`}
-				width={"70vw"}
-				height={"70vw"}
-				theme={"mobileRadial"}
+				fontSize={`3vw`}
+				width={"30%"}
+				height={"10vw"}
+				theme={"brownButton"}
 				onClick={refreshToken}
 				cssProps={css`
 					margin-bottom: 36px;
@@ -109,11 +108,12 @@ const checkWrapperCSS = css`
 	align-items: center;
 	justify-content: space-between;
 	flex: 1;
+	background-color: #81a521;
 `
 
 const imageWrapper = css`
-	width: 200%;
-	height: 80vw;
+	width: 100%;
+	height: 40vw;
 	overflow: visible;
 `
 

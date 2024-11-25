@@ -13,12 +13,12 @@ export default function Home() {
 		<div css={guideWrapperCSS}>
 			<div css={scene1CSS}>
 				<div css={scene1InnerCSS}>
-					<div css={mainLabelCSS}>교실 속 작은 경제, 머니빌</div>
-					<div css={subLabelCSS}>함께 성장하는 우리 교실의 작은 경제를 체험해 보세요!</div>
+					<div css={mainLabelCSS}>경제 체험의 장, 머니빌</div>
+					<div css={subLabelCSS}>머니빌에 오신 걸 환영합니다!</div>
 					<div css={lineCSS} />
 					<div css={buttonWrapperCSS}>
 						<Button
-							theme={"cancelLight"}
+							theme={"greenButton"}
 							width={"240px"}
 							height={"84px"}
 							text={"학생 로그인"}
@@ -29,7 +29,7 @@ export default function Home() {
 						></Button>
 						{!isMobile && (
 							<Button
-								theme={"highlighted"}
+								theme={"brownButton"}
 								width={"240px"}
 								height={"84px"}
 								text={"교사 로그인"}
@@ -41,7 +41,7 @@ export default function Home() {
 						)}
 					</div>
 					<img
-						src={"/assets/guide/14.jpg"}
+						src={"/assets/guide/14.png"}
 						css={css`
 							width: 200px;
 							height: auto;
@@ -70,6 +70,9 @@ const scene1CSS = css`
 		height: 100vh;
 		background-image: url(graphic-to-be-filtered.jpg);
 		background-image: url("/assets/guide/background4.jpg");
+		background-size: 90%; /* Adjust this value for less zoom */
+		background-repeat: no-repeat;
+		background-position: center;
 		background-size: cover;
 		filter: brightness(50%);
 	}

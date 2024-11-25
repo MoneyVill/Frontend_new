@@ -72,7 +72,7 @@ function GuidePage({data, refetch}: GuidePageProps) {
 					text={"7일 단기 예금 가입"}
 					fontSize={`var(--student-h3)`}
 					width={"48%"}
-					theme={"mobileSoft"}
+					theme={"greenButton"}
 					onClick={() => {
 						setTerm(() => 0)
 						openComp()
@@ -83,7 +83,7 @@ function GuidePage({data, refetch}: GuidePageProps) {
 					text={"21일 장기 예금 가입"}
 					fontSize={`var(--student-h3)`}
 					width={"48%"}
-					theme={"mobileNormal"}
+					theme={"brownButton"}
 					onClick={() => {
 						setTerm(() => 1)
 						openComp()
@@ -95,8 +95,7 @@ function GuidePage({data, refetch}: GuidePageProps) {
 
 				<div css={guideWrapperCSS}>
 					<div css={mSizeFontCSS}>
-						저희 예금 상품은 아래와 <br />
-						같이 두가지가 있어요.
+						저희 예금 상품은 두 가지가 있어요.
 					</div>
 					<div css={imageWrapperCSS}>
 						<LoadImage
@@ -157,7 +156,7 @@ function GuidePage({data, refetch}: GuidePageProps) {
 const navBarOverlayCSS = css`
 	width: 100%;
 	height: 64px;
-	background-color: var(--student-main-color);
+	background-color: #81a521;
 	position: fixed;
 	bottom: 0;
 	z-index: 99999999;
@@ -185,6 +184,7 @@ const guideWrapperCSS = css`
 	flex-direction: column;
 	align-items: center;
 	margin-top: 24px;
+	background-color: #81a521;
 `
 
 const lSizeFontCSS = css`
@@ -207,12 +207,14 @@ const sSizeFontCSS = css`
 `
 
 const imageWrapperCSS = css`
-	margin: 24px 0px 64px 0px;
+	margin: 24px 0px 24px 0px;
+	background-color: #81a521;
 `
 
 const firstImageWrapperCSS = css`
 	width: 50vw;
 	height: 40vw;
+	background-color: #81a521;
 `
 
 export default GuidePage
