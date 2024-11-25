@@ -82,7 +82,7 @@ function login() {
 						if (res.status == "approved") {
 							process.env.NODE_ENV === "production"
 								? router.push("https://jungle-school.xyz/client")
-								: router.push("/student/home");
+								: router.push("http://localhost:5173");
 						}
 					}
 				})

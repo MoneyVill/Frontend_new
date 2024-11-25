@@ -33,7 +33,7 @@ function GovRuleClass() {
 	// 	})
 
 	const rule = ``
-	
+
 	return (
 		<div css={contentWrapperCSS}>
 			<div css={titleCSS}>
