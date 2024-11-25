@@ -314,7 +314,7 @@ function signup() {
 
 				<div css={footerWrapperCSS}>
 					<Button
-						theme={"highlighted"}
+						theme={"brownButton"}
 						width={"180px"}
 						height={"64px"}
 						text={"회원가입"}
@@ -328,54 +328,6 @@ function signup() {
 }
 
 // 임시 값
-const wrapperCSS = css`
-	display: flex;
-	flex-direction: column;
-	/* justify-content: center; */
-	align-items: center;
-	width: 100%;
-	/* height: 100%; */
-	height: auto;
-`
-
-const innerWrapperCSS = css`
-	width: 95vw;
-	/* height: 40vh; */
-	/* background-color: red; */
-	display: flex;
-	flex-direction: column;
-	/* align-items: center; */
-`
-
-const inputTitleCSS = css`
-	color: #9b6f00;
-	margin-bottom: 10px;
-	font-weight: 700;
-`
-
-const imageWrapperCSS = css`
-	width: 100%;
-	height: 60vw;
-`
-
-const inputCSS = css`
-	width: 100%;
-`
-
-const inputFileCSS = ({ fileUrl }: { fileUrl: string }) => {
-	return css`
-		display: flex;
-		/* width: 300px; */
-		align-items: center;
-		gap: 12px;
-		color: ${fileUrl ? "rgba(0, 20, 50, 1)" : "rgba(0, 20, 50, 0.5)"};
-		overflow: hidden;
-		white-space: nowrap;
-		width: 100%;
-		font-size: var(--teacher-h5);
-	`
-}
-
 const messageCSS = ({ isValid }: { isValid: boolean }) => {
 	return css`
 		font-size: var(--teacher-h6);
@@ -384,12 +336,52 @@ const messageCSS = ({ isValid }: { isValid: boolean }) => {
 		height: 12px;
 	`
 }
-
-const footerWrapperCSS = css`
+const imageWrapperCSS = css`
 	width: 100%;
-	display: flex;
-	justify-content: center;
-	margin: 24px 0px 84px 0px;
+	height: 23.3vw;
 `
+const wrapperCSS = css`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  background-color: #81a521; 
+
+`
+const innerWrapperCSS = css`
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  background-color: #81a521; 
+`
+const inputTitleCSS = css`
+  color: rgba(0, 20, 50, 0.5);
+  margin-bottom: 10px;
+  font-weight: 700;
+`
+const inputCSS = css`
+  width: 100%;
+`
+const footerWrapperCSS = css`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 24px 0px 84px 0px;
+`
+
+// const inputFileCSS = ({ fileUrl }: { fileUrl: string }) => {
+// 	return css`
+// 		display: flex;
+// 		/* width: 300px; */
+// 		align-items: center;
+// 		gap: 12px;
+// 		color: ${fileUrl ? "rgba(0, 20, 50, 1)" : "rgba(0, 20, 50, 0.5)"};
+// 		overflow: hidden;
+// 		white-space: nowrap;
+// 		width: 100%;
+// 		font-size: var(--teacher-h5);
+// 	`
+// }
 
 export default signup

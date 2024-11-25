@@ -295,7 +295,7 @@ function Signup() {
 
 				<div css={footerWrapperCSS}>
 					<Button
-						theme={"highlighted"}
+						theme={"brownButton"}
 						width={"180px"}
 						height={"64px"}
 						text={"회원가입"}
@@ -316,36 +316,33 @@ const messageCSS = ({ isValid }: { isValid: boolean }) => {
 		height: 12px;
 	`
 }
-
 const imageWrapperCSS = css`
 	width: 100%;
 	height: 23.3vw;
 `
-
 const wrapperCSS = css`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
   height: auto;
-`
+  background-color: #81a521; 
 
+`
 const innerWrapperCSS = css`
   width: 40vw;
   display: flex;
   flex-direction: column;
+  background-color: #81a521; 
 `
-
 const inputTitleCSS = css`
   color: rgba(0, 20, 50, 0.5);
   margin-bottom: 10px;
   font-weight: 700;
 `
-
 const inputCSS = css`
   width: 100%;
 `
-
 const footerWrapperCSS = css`
   width: 100%;
   display: flex;

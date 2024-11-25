@@ -27,7 +27,7 @@ function Button({ text, fontSize, width, height, theme, margin, onClick, disable
 	return (
 		<button
 			disabled={disabled}
-			css={[initCSS({ fontSize, width, height, margin }), buttonCSS({ theme }), cssProps ]}
+			css={[initCSS({ fontSize, width, height, margin }), buttonCSS({ theme }), cssProps]}
 			onClick={onClick}
 		>
 			{/* <button disabled={disabled} css={buttonCSS({ fontSize, width, height, themes, theme, margin })} onClick={onClick}></button> */}
@@ -78,6 +78,20 @@ function Button({ text, fontSize, width, height, theme, margin, onClick, disable
 
 const buttonCSS = ({ theme }: { theme: string }) => {
 	const themes: { [prop: string]: any } = {
+		//진우 추가 테마
+		greenButton: css`
+		border: none;
+		border-radius: 10px;
+		color: var(--common-back-color-2);
+		background-color: rgba(9, 135, 47);
+	`,
+		brownButton: css`
+		border: none;
+		border-radius: 10px;
+		color: var(--common-back-color-2);
+		background-color: rgba(138, 91, 11);
+	`,
+		//진우 추가 테마
 		normal: css`
 			border: none;
 			border-radius: 10px;
@@ -178,8 +192,8 @@ const buttonCSS = ({ theme }: { theme: string }) => {
 		mobileRadial: css`
 			border: none;
 			border-radius: 100%;
-			color: #3d2f21;
-			background-color: #ffcd00;
+			color: #8a5b0b;
+			background-color: #81a521;
 			animation-name: first;
 			animation-duration: 1s;
 			animation-iteration-count: infinite;

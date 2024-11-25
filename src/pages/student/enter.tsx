@@ -10,7 +10,7 @@ import { getTokenStatusAPI } from "@/api/common/getTokenStatusAPI"
 import useGetTokenStatus from "@/hooks/useGetTokenStatus"
 import { removeCookie } from "@/api/cookie"
 
-function enter() {
+function Enter() {
   const router = useRouter()
   const [getTokenStatus, setTokenStatus] = useGetTokenStatus()
   const [phase, setPhase] = useState<number>(0)
@@ -129,7 +129,6 @@ function enter() {
           <div css={WrapperCSS}>
             <div css={titleCSS}>반 입장</div>
             <div css={subtitleCSS}>나의 반 번호를 입력해주세요.</div>
-
             <div css={bottomWrapperCSS}>
               <div css={inputOuterWrapperCSS}>
                 <input 
@@ -137,15 +136,16 @@ function enter() {
                   style={{ width: "20vw" }} 
                   type="number"
                   onChange={handleClassChange}
+                  onWheel={(e) => e.preventDefault()}
                 />
               </div>
 
               <Button
                 text="다음으로!"
-                fontSize="5vw"
-                width="60%"
-                height="15vw"
-                theme="mobileNormal"
+                fontSize="3vw"
+                width="50%"
+                height="5vw"
+                theme="brownButton"
                 onClick={passFirstPhaseHandler}
               />
             </div>
@@ -156,7 +156,7 @@ function enter() {
           <div css={logoutWrapperCSS}>
             <div onClick={signoutHandler}>로그아웃</div>
           </div>
-          <div css={WrapperCSS} style={{ marginTop: "100vw" }}>
+          <div css={WrapperCSS} style={{ marginTop: "1vw" }}>
             <div css={titleCSS}>반 입장</div>
             <div css={subtitleCSS}>코드를 입력해주세요.</div>
             <div css={bottomWrapperCSS}>
@@ -164,10 +164,10 @@ function enter() {
 
               <Button
                 text="입장할래요!"
-                fontSize="5vw"
-                width="60%"
-                height="15vw"
-                theme="mobileNormal"
+                fontSize="3vw"
+                width="50%"
+                height="5vw"
+                theme="brownButton"
                 onClick={submitCodeFunction}
               />
             </div>
@@ -180,14 +180,14 @@ function enter() {
 
 const titleCSS = css`
   margin-top: 12px;
-  font-weight: 700;
-  font-size: 8vw;
+  font-weight: 500;
+  font-size: 5vw;
 `
 
 const subtitleCSS = css`
   margin-top: 12px;
-  font-weight: 500;
-  font-size: 5vw;
+  font-weight: 300;
+  font-size: 3vw;
 `
 
 const enterWrapperCSS = css`
@@ -196,6 +196,7 @@ const enterWrapperCSS = css`
   overflow: hidden;
   flex: 1;
   display: flex;
+  background-color:#81a521;
 `
 
 const gridCSS = ({ phase }: { phase: number }) => css`
@@ -213,7 +214,6 @@ const phaseWrapperCSS = css`
   flex: 1;
   flex-direction: column;
 `
-
 const WrapperCSS = css`
   flex: 1;
   display: flex;
@@ -224,32 +224,32 @@ const WrapperCSS = css`
 `
 
 const imageWrapper = css`
-  margin-top: 8px;
-  width: 200%;
-  height: 100vw;
+  margin-top: 5px;
+  width: 100%;
+  height: 30vw;
   overflow: visible;
 `
 
 const inputOuterWrapperCSS = css`
-  height: 22vw;
-  margin: 24px 0px 24px 0px;
+  height: 5vw;
+  margin: 5px 0px 5px 0px;
 `
 
 const inputWrapperCSS = css`
   width: 15vw;
-  height: 21vw;
+  height: 5vw;
   border: none;
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgba(129, 165, 33, 0.3);
   border-bottom: 3px solid var(--student-main-color-4);
-  margin: 0px 4px 0px 4px;
-  font-size: 10vw;
+  margin: 0px 5px 0px 5px;
+  font-size: 5vw;
   text-align: center;
   transition-property: border-bottom background-color;
   transition-duration: 0.3s;
 
   &:focus {
     outline: none;
-    background-color: var(--student-main-color-2);
+    background-color: rgba(129, 165, 33, 0.3);
     border-bottom: 8px solid var(--student-main-color-5);
   }
 `
@@ -259,6 +259,8 @@ const bottomWrapperCSS = css`
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: auto;
+  margin:0;
 `
 
 const logoutWrapperCSS = css`
@@ -270,4 +272,4 @@ const logoutWrapperCSS = css`
   z-index: 200;
 `
 
-export default enter
+export default Enter

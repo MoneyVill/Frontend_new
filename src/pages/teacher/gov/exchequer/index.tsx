@@ -69,7 +69,9 @@ function index() {
 				taxAspect={0}
 				taxValue={11}
 
-			/> } */}
+
+			/> */}
+
 			{/* {renderExchequerList} */}
 		</div>
 	)

@@ -69,7 +69,7 @@ function index() {
 							job={data.jobName}
 							credit={data.creditRating}
 							backgroundColor={data.color !== null ? data.color : "#634AFF"}
-							imgUrl={data.jobImage !== null ? data.jobImage : "https://d3bkfkkihwj5ql.cloudfront.net/worker_male.png"}
+							imgUrl={data.jobImage !== null ? data.jobImage : "/assets/job/doctor.png"}
 						/>
 					)}
 				</ContentWrapper>
